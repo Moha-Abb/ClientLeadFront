@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login ClientLead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styleLogIn.css">
+</head>
+
+<body>
+
+    <div class="relative min-h-screen flex ">
+        <div
+            class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
+            <div class="sm:w-1/2 xl:w-2/5 h-full  hidden lg:flex flex-auto ">
+
+                <video autoplay loop playsinline muted class="myVideo"
+                    src="/videos/Navy Blue Animated Business Company Presentation Video.mp4"></video>
+            </div>
+            <!-- Formulario de acceso -->
+
+            <div
+                class="md:flex md:items-center md:justify-center w-full lg:w-auto md:h-full w-2/5 xl:w-2/5 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white ">
+                <div class="max-w-md w-full space-y-8">
+                    <div class="text-center">
+                        <h2 class="mt-6 text-3xl font-bold text-gray-900">
+                            ¡Hola de nuevo!
+                        </h2>
+                        <p class="mt-2 text-sm text-gray-500">Introduce tus datos para acceder</p>
+                    </div>
+                    <div id="alert" class="flex hidden bg-blue-100 rounded-lg p-4 mb-4 text-sm text-blue-700"
+                        role="alert">
+                        <svg class="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <span class="font-medium">Alerta!</span> Datos de correo o contraseña incorrectos.
+                        </div>
+                    </div>
+
+                    <form class="mt-8 space-y-6" id="form">
+                        <div>
+
+                            <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
+                            <input name="identifier"
+                                class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                                type="email" placeholder="Tu correo..">
+                        </div>
+                        <div class="mt-8 content-center">
+                            <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">
+                                Contraseña
+                            </label>
+                            <input name="password"
+                                class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                                type="password" placeholder="Introduce contraseña..">
+                        </div>
+
+                        <div class="text-sm">
+                            <a href="#" class="text-indigo-400 hover:text-blue-500">
+                                Has olvidado tu contraseña?
+                            </a>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                                Acceder
+                            </button>
+                        </div>
+                        <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
+                            <span>No tienes una cuenta?</span>
+                            <a href="/index.html"
+                                class="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
+                                up</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="token.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>

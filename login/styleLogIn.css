@@ -1,0 +1,21 @@
+
+   
+
+    .triangle {
+        border-top: 60rem solid #fff;
+        border-left: 25rem solid transparent;
+    }
+
+    .imageLogo{
+        width: 120px;
+        height: 150px;
+        background-color: blanchedalmond;
+        border-radius: 50%;
+        }
+
+.myVideo{
+      object-fit:fill;
+      width: 100%;
+      height: 100%;
+      height: 100vh;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClientLead</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Gogole Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn-tailwindcss.vercel.app/"></script>
+  <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+  <link rel="stylesheet"
+    href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+</head>
+
+<body class="backround">
+  <header class="bg-inherit	 flex flex-col items-center justify-center w-full ">
+    <!-- Navbar -->
+    <nav class=" flex justify-between bg-transparent    shadow-md w-full my-0 md:px-3">
+      <!-- Logo Container -->
+      <div class="flex items-center">
+
+        <a href="index.html" class="cursor-pointer flex items-center">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/clientlead-3ccf4.appspot.com/o/1new.png?alt=media&token=15f3ac0b-19a9-4815-85a9-7af74e50da1a"
+            alt="" class="sizeLogo">
+          <h3 class="text-2xl font-medium text-blue-500">
+
+            ClientLead
+          </h3>
+        </a>
+      </div>
+
+
+
+      <!-- Auth Links -->
+      <div class="flex items-center space-x-5 hidden md:flex me-8">
+
+        <a class="flex text-gray-600 hover:text-blue-500 text-xl cursor-pointer transition-colors duration-300">
+          Nuestro Equipo
+        </a>
+        <a class="flex text-gray-600 hover:text-blue-500 text-xl cursor-pointer transition-colors duration-300">
+          Opiniones
+        </a>
+
+        <a class="flex text-gray-600 hover:text-blue-500 text-xl cursor-pointer transition-colors duration-300">
+          Contacto
+        </a>
+      </div>
+
+      <div id="btnAccess" class="flex items-center ">
+
+        <a id="btnClientHref" href="/client/index.html" class="hidden py-4 px-8 text-lg font-bold   rounded border
+         border-solid cursor-pointer 
+         border-slate-200 text-slate-500 hover:drop-shadow-2xl hover:bg-blue-200">
+          Accede a tu Perfil
+        </a>
+        <a id="btnDeveloperHref" href="/developer/index.html" class="hidden py-4 px-8 text-lg font-bold   rounded border
+         border-solid cursor-pointer 
+         border-slate-200 text-slate-500 hover:drop-shadow-2xl hover:bg-blue-200">
+          Accede a tu Perfil
+        </a>
+      </div>
+
+      <!-- Hamberger Menu -->
+      <button class="w-10 h-10 md:hidden justify-self-end rounded-full hover:bg-gray-100">
+        <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+          width="24" height="24" viewBox="0 0 24 24">
+          <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <section class="videocontect rounded-lg">
+    <!-- The video -->
+    <video autoplay loop playsinline muted id="myVideo">
+      <source
+        src="https://firebasestorage.googleapis.com/v0/b/clientlead-3ccf4.appspot.com/o/logo%20cl%20vid.mp4?alt=media&token=d8a4a317-8b95-4e78-9863-0bc31423b3a8"
+        type="video/mp4">
+    </video>
+
+
+  </section>
+
+  <section class="pt-10  container mx-auto  px-2 ">
+    <div class="flex flex-wrap">
+      <div class=" w-full md:w-4/12 px-4 text-center">
+        <div class=" flex flex-col min-w-0 break-words  w-full mb-8  rounded-lg">
+          <div class="px-4 py-5 flex-auto">
+            <div
+              class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+              <i class="fas fa-award"></i>
+            </div>
+            <h6 class="text-xl font-semibold">Rapidez</h6>
+            <p class="mt-2 mb-4 text-blueGray-500">
+              Con Clientleap, podrás conectar con desarrolladores web en un abrir y cerrar de ojos.
+              Nuestra plataforma te permite encontrar y contratar expertos en desarrollo web de forma rápida y
+              eficiente
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-4/12 px-4 text-center">
+        <div class=" flex flex-col min-w-0 break-words  w-full mb-8  rounded-lg">
+          <div class="px-4 py-5 flex-auto">
+            <div
+              class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
+              <i class="fas fa-retweet"></i>
+            </div>
+            <h6 class="text-xl font-semibold">Gestiona los Proyectos Eficientemente</h6>
+            <p class="mt-2 mb-4 text-blueGray-500">
+              Si eres desarrollador, Nuestra herramienta de todolist les permite organizar tareas, establecer
+              prioridades y asignar plazos.
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class=" w-full md:w-4/12 px-4 text-center">
+        <div class=" flex flex-col min-w-0 break-words  w-full mb-8  rounded-lg">
+          <div class="px-4 py-5 flex-auto">
+            <div
+              class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
+              <i class="fas fa-fingerprint"></i>
+            </div>
+            <h6 class="text-xl font-semibold">Facilidad De Uso</h6>
+            <p class="mt-2 mb-4 text-blueGray-500">
+              Clientleap ha sido diseñado pensando en la facilidad de uso para nuestros usuarios. Nuestra plataforma
+              es intuitiva y fácil de navegar, lo que significa que podrás empezar a utilizarla de forma inmediata!
+            </p>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  <section class="pt-4  container mx-auto  px-2">
+
+    <div class="flex mt-8 mb-10">
+      <div class="flex flex-col mr-8">
+
+        <h1 class="text-black font-semibold  text-center text-5xl mx-auto mb-4">
+          Unete a ClientLead como
+        </h1>
+        <span class="font-bold text-center   text-3xl sm:text-5xl  text-blue-900  ">-<span id="dinamicUser"
+            class="font-bold text-center underline  mx-auto text-3xl sm:text-5xl  text-blue-900 leading-relaxeds "></span></span>
+
+        <p class="mt-4 text-lg text-blueGray-800 ">
+          Con Clientleap, nunca fue tan fácil conectar con desarrolladores web y mantener un seguimiento constante
+          de tus proyectos. Nuestro entorno te permite colaborar en tiempo real con un chat y una herramienta de
+          todolist. Simplifica el proceso de desarrollo web y obtén resultados excepcionales con Clientleap.
+          ¡Únete ahora!.
+        </p>
+
+      </div>
+      <img src="/images/step-2_1.jpg" alt="abstract art image" class="rounded-xl" />
+    </div>
+  </section>
+  <section class="flex flex-col w-full h-[500px] bg-cover bg-fixed bg-center flex justify-center items-center" style="
+					background-image: url(https://firebasestorage.googleapis.com/v0/b/clientlead-3ccf4.appspot.com/o/photo-1642427749670-f20e2e76ed8c.jpg?alt=media&token=85179ca5-84a7-4f63-b91d-eca9b2141748);
+				">
+    <h1 class="text-white text-5xl text-center font-semibold mt-20 mb-10">
+      ¡Únete hoy a Clientleap y Ananza en tus Proyectos!
+    </h1>
+
+    <div class="flex gap-x-14">
+      <span class=" font-extrabold text-2xl text-center my-20 text-white ">
+        <a href="/login/signUp.html?u=developer" target="_blank"
+          class="text-white hover:text-black hover:drop-shadow-xl">
+          Registrate como Desarrollador
+        </a>
+        <hr class="my-4" />
+      </span>
+      <span class=" font-extrabold text-2xl text-center my-20 text-white/90 ">
+        <a href="/login/signUp.html?u=client" target="_blank" class="text-white hover:text-black hover:drop-shadow-xl">
+          Registrate como Cliente
+        </a>
+        <hr class="my-4 " />
+      </span>
+    </div>
+
+  </section>
+  <section class="p-20 pt-10 space-y-8">
+
+    <p class="text-lg my-5">
+      ¡Únete hoy a Clientleap y simplifica la forma en que trabajas en proyectos de desarrollo web! Con nuestro entorno,
+      podrás conectar fácilmente con desarrolladores web y colaborar en tiempo real a través de un chat y una
+      herramienta de todolist. Además, podrás seguir el progreso de tus proyectos de forma continua y disfrutar de una
+      gestión eficiente de tareas.
+    </p>
+    <p class="text-lg">
+      simplifica la forma en que trabajas en proyectos de desarrollo web! Con nuestro entorno, podrás conectar
+      fácilmente con desarrolladores web y colaborar en tiempo real a través de un chat y una herramienta de todolist.
+      Además, podrás seguir el progreso de tus proyectos de forma continua y disfrutar de una gestión eficiente de
+      tareas. ¡Regístrate ahora y comienza a trabajar de forma más productiva con Clientleap!
+
+    </p>
+  </section>
+  <section style="
+			background-image: url(https://firebasestorage.googleapis.com/v0/b/clientlead-3ccf4.appspot.com/o/photo-1642427749670-f20e2e76ed8c.jpg?alt=media&token=85179ca5-84a7-4f63-b91d-eca9b2141748);
+		" class="flex  w-full h-[500px] bg-cover bg-fixed bg-center items-center font-sans px-4 mx-auto pb-20">
+
+    <div class="px-3 w-80% mx-auto">
+      <div class="mx-auto mb-8  text-center  ">
+        <h2 class="mb-4 text-3xl font-bold lg:text-5xl">
+          Conectando clientes y desarrolladores con
+          <span class="text-3xl sm:text-5xl text-blue-900 leading-relaxeds">ClientLeap
+          </span>
+          para soluciones exclusivas
+        </h2>
+      </div>
+
+      <div class="text-center  ">
+        <a href="/login/signUp.html?u=developer" target="_blank" class=" visible py-4 px-8 mb-4 text-lg font-bold  text-white bg-blue-500 rounded cursor-pointer 
+          sm:mr-3 sm:mb-0 sm:inline-block hover:drop-shadow-2xl">
+          Como Desarrollador</a>
+
+        <a href="/login/signUp.html?u=client" target="_blank" class="visible py-4 px-8 text-lg font-bold  bg-white rounded border border-solid cursor-pointer 
+          sm:inline-block border-slate-200 text-slate-500 hover:drop-shadow-2xl">
+          Como Cliente
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer id="footer" class="bg-white  w-full"></footer>
+
+
+  <script src="/components/footer.js"></script>
+  <script src="/login/token.js"></script>
+  <script src="indexPrincipal.js"></script>
+</body>
+
+
+</html>

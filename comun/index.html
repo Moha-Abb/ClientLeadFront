@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Comun</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+</head>
+
+<body class="backround">
+
+    <script src="/components/logOut.js"></script>
+
+    <div id="header"></div>
+    <script src="/components/header.js"></script>
+
+
+    <section class=" flex lg:flex-row flex-col items-center  mt-15">
+        <div class="h-100 mt-5 w-full flex items-center justify-center  font-sans">
+            <div class="bg-white w-full rounded shadow p-6 m-4 mt-0 w-full lg:w-3/4 lg:max-w-lg">
+                <div class="mb-4">
+                    <h1 class="text-grey-darkest">Todo List</h1>
+                    <div class="flex mt-4">
+                        <input id="taskInput"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                            placeholder="Añadir tarea">
+                        <button onclick="createTask()"
+                            class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal">
+                            Añadir</button>
+                    </div>
+                </div>
+                <div id="allTasks">
+                </div>
+            </div>
+        </div>
+        <!-- ---------Chat -->
+        <div class="w-full p-6 ">
+            <h1 class="text-grey-darkest text-center">Chat</h1>
+            <div class=" border rounded ">
+
+                <div class=" w-full p-6 heightChat " id="chatContainer">
+
+                    <ul class="space-y-2" id="chat">
+                        
+                        
+
+                    </ul>
+
+                </div>
+
+                <form id="form" class="flex items-center justify-between w-full p-3 border-t border-gray-300">
+                    <input type="text" placeholder="Message.." id="inputMessage"
+                        class="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
+                        name="message" required />
+
+                    <button type="submit" id="btnSend">
+                        <svg class="w-5 h-5 text-gray-500 origin-center transform rotate-90"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path
+                                d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer id="footer" class="bg-white fixed bottom-0 w-full"></footer>
+
+    <script src="/components/footer.js"></script>
+    <script src="/login/token.js"></script>
+    <script src="/components/appFirebase.js"></script>
+    <script src="/components/firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

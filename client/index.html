@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cliente</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body class="backround">
+
+    <script src="/components/logOut.js"></script>
+
+    <div id="header"></div>
+    <script src="/components/header.js"></script>
+
+    <div id="alert" class="flex hidden bg-blue-100 w-1/4 content-center mx-auto rounded-lg p-4 mb-1 mt-3 text-sm text-blue-700" role="alert">
+       
+        <div class="mx-auto">
+            <svg class="w-5 h-5 inline mr-3 text-center" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-medium">Alerta!</span> Tu Proyecto ha sido borrado.
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row" id="principalContent">
+        <!-- <aside class=""> -->
+        <div
+            class="flex mt-4  flex lg:flex-col py-2 lg:bg-white bg-teal-600 border-t border-r border-b lg:w-36 w-full bg-black-400 border-gray-200">
+            <button onclick="newProject()"
+                class=" lg:bg-blue-500 leading-none ml-4 lg:ml-0 py-1 w-50 hover:bg-blue-200  text-l lg:text-white text-gray-700  rounded">
+                Crear nuevo proyecto
+            </button>
+
+            <div id="projects" class="lg:mt-2 mx-auto w-100 lg:w-36 flex  gap-2 lg:flex-col">
+
+
+            </div>
+        </div>
+
+
+        <!-- </aside> -->
+        <div
+            class="mb-8 h-min shadow overflow-x-auto bg-white shadow-dashboard mx-auto mt-8 px-8 pt-3 rounded-bl-lg rounded-br-lg">
+            <table class="overflow-x-auto ">
+                <thead>
+                    <tr class="border-b-4">
+                        <th
+                            class="px-6 py-3  border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                            Proyecto</th>
+                        <th
+                            class="px-6  py-3  border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider hidden xl:block">
+                            Desarrollador</th>
+                        <th
+                            class="px-6 py-3    border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                            Estado</th>
+                        <th
+                            class="px-6 py-3  border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider hidden xl:block">
+                            Precio</th>
+                        <th
+                            class="px-6 py-3  border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                            Fecha de Entrega</th>
+                        <th class="px-6 py-3  border-gray-300"></th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white" id="table">
+
+                </tbody>
+            </table>
+            <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
+                                             
+            </div>
+        </div>
+    </div>
+
+    <div id="formProject"
+        class="  md:flex justify-center md:items-center md:justify-center   md:h-full   p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none hidden md:hidden ">
+        <div class="max-w-md w-full space-y-8">
+            <div class="text-center">
+                <h2 class="mt-6 text-3xl font-bold text-gray-900">
+                    ¡Tu nuevo Proyecto!
+                </h2>
+            </div>
+
+            <form class="mt-8 space-y-6" id="form">
+
+                <!-- Solo disponible cuando es cliente -->
+                <div>
+                    <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Nombre del Proyecto</label>
+                    <input id="nameProject" name="name"
+                        class="required w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                        type="text" placeholder="Nombre..">
+                </div>
+                <div>
+                    <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Precio</label>
+                    <input id="priceProject" name="price"
+                        class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                        type="text" placeholder="Precio..">
+                </div>
+                <div>
+                    <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Fecha de Entrega</label>
+                    <input id="finishDate" name="finishdate"
+                        class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                        type="date" placeholder="Fecha..">
+                </div>
+
+                <div class="mt-8 content-center">
+                    <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">
+                        Introduce Email del Desarrollador
+                    </label>
+                    <input id="developerEmail" name="developerEmail"
+                        class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                        type="email" placeholder="Introduce email..">
+                </div>
+                <div class="mt-8 content-center " id="statusProjectForm">
+                    <label class=" text-lg font-bold mx-auto text-gray-700  tracking-wide">
+                        Estado del proyecto
+                    </label>
+                    <div class="flex justify-evenly">
+                        <div>
+                            <label for="inline-radio" class="mr-2 text-lg font-bold text-gray-700 tracking-wide">
+                                En
+                                proceso</label>
+
+                            <input name="status" id="radioStatusProject" type="radio" value="en proceso">
+                        </div>
+                        <div>
+                            <label for="inline-radio" class="mr-2 text-lg font-bold text-gray-700 tracking-wide">
+                                Terminado</label>
+
+                            <input name="status"  type="radio" value="terminado">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="submit" value="Crear" id="createBtn"
+                        class="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+
+                </div>
+
+            </form>
+            <button id="updateBtn" onclick="updateProject()"
+                class="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                Modificar
+            </button>
+        </div>
+    </div>
+
+
+
+    <footer id="footer" class="bg-white fixed bottom-0 w-full"></footer>
+
+
+    <script src="/components/footer.js"></script>
+    <script src="/login/token.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

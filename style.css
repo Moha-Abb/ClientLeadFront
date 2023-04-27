@@ -1,0 +1,49 @@
+    section {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .backround {
+      background-color: rgba(232, 248, 242, 0.908);
+    }
+
+    .videocontect {
+      height: 90vh;
+    }
+
+    #myVideo {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      height: 90vh;
+      border-radius: 20px;
+      border-bottom-left-radius: 150px;
+
+    }
+
+
+    /* Add some content at the bottom of the video/page */
+    .content {
+      position: relative;
+      top: 25%;
+      left: 300px;
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .viewport-headerr {
+      position: relative;
+      height: 100vh;
+
+    }
+
+    .sizeLogo {
+      width: 100px;
+      height: 80px;
+    }
