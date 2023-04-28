@@ -55,6 +55,7 @@ async function showData(data) {
             throw new Error('hay error en la peticion')
         }
 
+        console.log(response)
         const result = await response.json();
 
         localStorage.setItem('token', result.jwt);
