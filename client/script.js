@@ -78,7 +78,7 @@ async function getProjects() {
             redirect: 'follow'
         };
 
-        const response = await fetch("https://finalproject-ifcz.onrender.com/api/users/me?populate=*", requestOptions)
+        const response = await fetch("https://finalprojectfront.onrender.com/api/users/me?populate=*", requestOptions)
 
         if (!response.ok) {
 
@@ -204,7 +204,7 @@ async function createProject(object) {
             body: raw,
             redirect: 'follow'
         };
-        const response = await fetch("https://finalproject-ifcz.onrender.com/api/proyectos", requestOptions);
+        const response = await fetch("https://finalprojectfront.onrender.com/api/proyectos", requestOptions);
         if (!response.ok) {
             if (response.status == 400 || response.status == 401) {
                 document.getElementById('formProjectContent').classList.remove('hidden')
@@ -254,7 +254,7 @@ async function updateProject() {
         };
 
 
-        const response = await fetch("https://finalproject-ifcz.onrender.com/api/proyectos/" + idUpdate, requestOptions);
+        const response = await fetch("https://finalprojectfront.onrender.com/api/proyectos/" + idUpdate, requestOptions);
         if (!response.ok) {
             if (response.status == 400 || response.status == 401) {
                 document.getElementById('formProjectContent').classList.remove('hidden')
@@ -290,7 +290,7 @@ async function deleteProject(id) {
         if (confirmation) {
 
 
-            const response = await fetch("https://finalproject-ifcz.onrender.com/api/proyectos/" + id, requestOptions)
+            const response = await fetch("https://finalprojectfront.onrender.com/api/proyectos/" + id, requestOptions)
             console.log(response)
             if (!response.ok) {
 
