@@ -1,9 +1,9 @@
-<header class=" flex flex-col items-center justify-center w-full ">
+<header class=" flex  items-center justify-center w-full ">
     <!-- Navbar -->
-    <nav
-        class="bg-white flex justify-between md:justify-around py-4 bg-white/80 backdrop-blur-md shadow-md w-full px-10  px-8 md:px-3">
+    <nav 
+        class="bg-white flex flex-col md:flex-row justify-between md:justify-around py-4 bg-white/80 backdrop-blur-md shadow-md w-full px-10  px-8 md:px-3">
         <!-- Logo Container -->
-        <div class="flex items-center">
+        <div class="flex items-center justify-center">
             <!-- Logo -->
             <div class="cursor-pointer flex items-center">
                 <img src="/images/1new.png" alt="" class="sizeLogo">
@@ -23,12 +23,17 @@
                 <a href="/developer/index.html" id="userDeveloper" class="underline"></a>
             </h1>
             <h1 id="endpointComun" class="text-xl   text-center leading-4 text-blue-500 font-extrabold "> Bienvenido :
-                <span id="user" class="underline"></span>
+                <p id="user" class="underline mt-2"></p>
             </h1>
         </div>
 
-        <div class="flex items-center space-x-5 hidden md:flex">
+        <div class="flex items-center space-x-5  justify-center mt-2 md:mt-0">
 
+            <button onclick="goBack()" id="goBack"
+                class="flex hidden text-lg text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600">
+                Volver
+            </button>
+            
             <!-- Desconectar -->
             <button onclick="desconectar()"
                 class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600">
@@ -42,12 +47,12 @@
             </button>
         </div>
 
-        <!-- Hamberger Menu -->
+        <!-- Hamberger Menu
         <button class="w-10 h-10 md:hidden justify-self-end rounded-full hover:bg-gray-100">
             <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 version="1.1" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
             </svg>
-        </button>
+        </button> -->
     </nav>
 </header>

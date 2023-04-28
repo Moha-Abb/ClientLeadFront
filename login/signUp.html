@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="styleSignUp.css">
 </head>
 
-<body>
-    <div class="relative min-h-screen flex ">
+<body class="  backround" id="bodyContent">
+    <div class="relative min-h-screen flex " id="contentLogin">
         <div
             class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
             <div class="sm:w-1/2 xl:w-2/5 h-full  hidden lg:flex flex-auto ">
 
                 <video autoplay loop playsinline muted class="myVideo"
-                    src="/videos/Navy Blue Animated Business Company Presentation Video.mp4"></video>
+                    src="https://firebasestorage.googleapis.com/v0/b/clientlead-3ccf4.appspot.com/o/Secuencia_01.mp4?alt=media&token=344fc6d0-5bc9-4566-ac09-1b664b45a618"></video>
             </div>
             <!-- Formulario de registro -->
             <div
@@ -51,24 +51,24 @@
                        
                             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Nombre de la
                                 empresa</label>
-                            <input name="companyName"
+                            <input name="companyName" required
                                 class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
                                 type="text" placeholder="Tu Nombre..">
                         <div>
                             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Nombre</label>
-                            <input name="name"
+                            <input name="name" required
                                 class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
                                 type="text" placeholder="Tu Nombre..">
                         </div>
                         <div>
                             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Apellido</label>
-                            <input name="surname"
+                            <input name="surname" required
                                 class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
                                 type="text" placeholder="Tu Apellido..">
                         </div>
                         <div>
                             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
-                            <input name="email"
+                            <input name="email" required
                                 class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
                                 type="email" placeholder="Tu correo..">
                         </div>
@@ -77,7 +77,7 @@
                             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">
                                 Contraseña
                             </label>
-                            <input name="password"
+                            <input name="password" required
                                 class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
                                 type="password" placeholder="Introduce contraseña..">
                         </div>
@@ -99,6 +99,15 @@
         </div>
     </div>
 
+    <div class="cube-loader hidden" id="loader">
+        <div class="cube-top"></div>
+        <div class="cube-wrapper">
+          <span style="--i:0" class="cube-span"></span>
+          <span style="--i:1" class="cube-span"></span>
+          <span style="--i:2" class="cube-span"></span>
+          <span style="--i:3" class="cube-span"></span>
+        </div>
+      </div>
 
     <script src="token.js"></script>
     <script src="signUp.js"></script>

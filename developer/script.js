@@ -24,6 +24,9 @@ const inputProjectFinishDate = document.getElementById('finishDate');
 const inputProjectClientEmail = document.getElementById('clientEmail');
 const statusProjectForm = document.getElementById('statusProjectForm');
 const radioStatusProject = document.getElementById('radioStatusProject');
+const alertNewProject = document.getElementById('alertNewProject');
+const principalLoader = document.getElementById('principalLoader');
+
 
 let allProjects = [];
 let idsProjects;
@@ -61,6 +64,8 @@ function updateProjectInputs(id) {
 getProjects()
 async function getProjects() {
 
+    document.getElementById('principalContent').classList.add('hidden')
+    document.getElementById('principalLoader').classList.remove('hidden')
     try {
 
         let requestOptions = {
@@ -77,6 +82,8 @@ async function getProjects() {
 
             throw new Error('hay error en la peticion')
         }
+        document.getElementById('principalContent').classList.remove('hidden')
+        document.getElementById('principalLoader').classList.add('hidden')
         const result = await response.json();
 
         document.getElementById('userDeveloper').innerHTML = user;
@@ -94,7 +101,6 @@ async function getProjects() {
 //pintar tanto los proyectos como ganancias
 function showAllProjects(projectsArray) {
 
-    console.log(projectsArray)
     const projects = document.getElementById('projects');
     const table = document.getElementById('table');
     const totalProjects = document.getElementById('totalProjects');
@@ -163,8 +169,8 @@ function showAllProjects(projectsArray) {
     <td
         class="px-6 py-4 whitespace-no-wrap  border-gray-500 text-blue-900 text-sm leading-5">
         ${project.finishdate}</td>
-    <td class="px-6 py-4 flex flex-col md:flex-row whitespace-no-wrap text-right border-gray-500 text-sm leading-5">
-        <a href="/comun/index.html?id=${project.id}" target="_blank""
+    <td class="px-6 py-4 flex flex-col gap-1 md:flex-row whitespace-no-wrap text-right border-gray-500 text-sm leading-5">
+        <a href="/comun/index.html?id=${project.id}"
             class="whitespace-no-wrap px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">Ver
             Detalles
         </a>
@@ -173,7 +179,7 @@ function showAllProjects(projectsArray) {
             Modificar
         </button>
         <button onclick="deleteProject(${project.id})" 
-            class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 bg-red-500 hover:bg-blue-700 hover:text-white focus:outline-none">
+            class="px-5 py-2 border-blue-500 border  rounded transition duration-300 bg-red-500 hover:bg-blue-700 text-white focus:outline-none">
             Eliminar
         </button>
     </td>
@@ -194,6 +200,9 @@ form.addEventListener("submit", (e) => {
 })
 
 async function createProject(object) {
+
+    document.getElementById('formProjectContent').classList.add('hidden')
+    document.getElementById('loaderAddProject').classList.remove('hidden')
     try {
 
         let raw = JSON.stringify({
@@ -219,6 +228,16 @@ async function createProject(object) {
 
         const response = await fetch("http://localhost:1337/api/proyectos", requestOptions);
         if (!response.ok) {
+            if (response.status == 400 || response.status == 401) {
+                document.getElementById('formProjectContent').classList.remove('hidden')
+                document.getElementById('loaderAddProject').classList.add('hidden')
+                document.getElementById('alertNewProject').classList.remove('hidden')
+
+                setTimeout(function () {
+                    document.getElementById('alertNewProject').classList.add('hidden');
+                }, 4000);
+                return;
+            }
             throw new Error('hay error en la peticion')
         }
 
@@ -228,6 +247,9 @@ async function createProject(object) {
     }
 }
 async function updateProject() {
+
+    document.getElementById('formProjectContent').classList.add('hidden')
+    document.getElementById('loaderAddProject').classList.remove('hidden')
 
     const formData = new FormData(form);
     const formObject = Object.fromEntries(formData.entries());
@@ -258,6 +280,12 @@ async function updateProject() {
 
         const response = await fetch("http://localhost:1337/api/proyectos/" + idUpdate, requestOptions);
         if (!response.ok) {
+            if (response.status == 400 || response.status == 401) {
+                document.getElementById('formProjectContent').classList.remove('hidden')
+                document.getElementById('loaderAddProject').classList.add('hidden')
+
+                return;
+            }
             throw new Error('hay error en la peticion')
         }
 

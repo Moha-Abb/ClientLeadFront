@@ -15,6 +15,7 @@ async function headerr(){
           document.getElementById('endpointClient').classList.add('hidden');
           document.getElementById('endpointComun').classList.add('hidden');
 
+
           break;
           case '/client/index.html':
             header.innerHTML=text;
@@ -26,6 +27,8 @@ async function headerr(){
             header.innerHTML=text;
             document.getElementById('endpointClient').classList.add('hidden');
             document.getElementById('endpointDeveloper').classList.add('hidden');
+            document.getElementById('goBack').classList.remove('hidden');
+
 
 
 

@@ -2,18 +2,26 @@ function checkToken() {
     if (isTokenValid()) {
 
         const rol = localStorage.getItem("rol")
-        if(rol=='developer'){
+        if (rol == 'developer') {
             window.location.href = "/developer/index.html"
-        }else{
+        } else {
             window.location.href = "/client/index.html"
         }
     }
 }
 checkToken();
 const form = document.getElementById('form');
+const contentLogin = document.getElementById('contentLogin');
+const loader = document.getElementById('loader');
+const body = document.getElementById('bodyContent');
+
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
+
+    contentLogin.classList.add('hidden')
+    body.classList.add('loaderCenter')
+    loader.classList.remove('hidden')
     const formData = new FormData(form);
     const queryString = new URLSearchParams(formData);
 
@@ -33,9 +41,15 @@ async function showData(data) {
         }
         const response = await fetch(url, opciones);
         if (!response.ok) {
-            if (response.status == 400||response.status == 401) {
+            if (response.status == 400 || response.status == 401) {
 
+                contentLogin.classList.remove('hidden')
+                body.classList.remove('loaderCenter')
+                loader.classList.add('hidden')
                 document.getElementById('alert').classList.remove('hidden')
+                setTimeout(function () {
+                    document.getElementById('alert').classList.add('hidden');
+                }, 1700);
                 return;
             }
             throw new Error('hay error en la peticion')
@@ -43,7 +57,6 @@ async function showData(data) {
 
         const result = await response.json();
 
-        document.getElementById('alert').classList.add('hidden')
         localStorage.setItem('token', result.jwt);
         localStorage.setItem('usuario', result.user.username);
         localStorage.setItem('rol', result.user.rol);
@@ -51,10 +64,10 @@ async function showData(data) {
 
 
 
-        if(result.user.rol=='developer'){
+        if (result.user.rol == 'developer') {
             window.location.href = '/developer/index.html'
 
-        }else{
+        } else {
             window.location.href = '/client/index.html'
 
         }
@@ -64,3 +77,4 @@ async function showData(data) {
     }
 
 }
+
