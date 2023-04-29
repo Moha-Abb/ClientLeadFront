@@ -48,7 +48,7 @@ async function showData(data) {
             body: data,
         };
 
-        const response = await fetch("https://finalprojectfront.onrender.com/api/auth/local/register", requestOptions)
+        const response = await fetch("https://finalproject-ifcz.onrender.com/api/auth/local/register", requestOptions)
 
         if (!response.ok) {
 
