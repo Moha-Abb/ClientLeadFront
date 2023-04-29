@@ -46,7 +46,7 @@ async function getProject() {
             redirect: 'follow'
         };
 
-        const response = await fetch("https://finalprojectfront.onrender.com/api/proyectos/" + id + "?populate=*", requestOptions);
+        const response = await fetch("https://finalproject-ifcz.onrender.com/api/proyectos/" + id + "?populate=*", requestOptions);
         if (!response.ok) {
 
             window.location.href = '/page404.html'
@@ -138,7 +138,7 @@ async function createTask() {
             body: raw,
             redirect: 'follow'
         };
-        const response = await fetch("https://finalprojectfront.onrender.com/api/tasks", requestOptions);
+        const response = await fetch("https://finalproject-ifcz.onrender.com/api/tasks", requestOptions);
 
         if (!response.ok) {
             throw new Error('hay error en la peticion')
@@ -172,7 +172,7 @@ async function updateTask(id) {
             redirect: 'follow'
         };
 
-        const response = await fetch("https://finalprojectfront.onrender.com/api/tasks/" + id, requestOptions)
+        const response = await fetch("https://finalproject-ifcz.onrender.com/api/tasks/" + id, requestOptions)
         if (!response.ok) {
 
             throw new Error('hay error en la peticion')
@@ -202,7 +202,7 @@ async function deleteTask(id) {
             redirect: 'follow'
         };
 
-        const response = await fetch("https://finalprojectfront.onrender.com/api/tasks/" + id, requestOptions)
+        const response = await fetch("https://finalproject-ifcz.onrender.com/api/tasks/" + id, requestOptions)
         if (!response.ok) {
 
             throw new Error('hay error en la peticion')
