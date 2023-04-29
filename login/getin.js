@@ -25,7 +25,7 @@ form.addEventListener("submit", (e) => {
     const formData = new FormData(form);
     const queryString = new URLSearchParams(formData);
 
-    showData(queryString.toString());
+    showData(queryString);
 
 })
 
