@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
 
 async function showData(data) {
     try {
-        url = 'https://finalprojectfront.onrender.com/api/auth/local';
+        url = 'https://finalproject-ifcz.onrender.com/api/auth/local';
         let opciones = {
             method: 'POST',
             body: data,
